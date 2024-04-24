@@ -24,6 +24,9 @@ def start_keyboard():
             ],
             [
                 types.InlineKeyboardButton(text='Оставить отзыв', callback_data='review')
+            ],
+            [
+                types.InlineKeyboardButton(text='Квартиры', callback_data='send_links')
             ]
         ]
     )

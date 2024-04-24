@@ -25,8 +25,6 @@ categories = ['салаты', 'европейская кухня', 'восточ
 @menu_router.message(F.text.lower().in_(categories))
 async def show_category(message: types.Message):
     category = message.text
-    kb = types.ReplyKeyboardRemove()
-    print(category)
     data = await database.fetch(
        """
        SELECT Dishes.* FROM Dishes
@@ -65,4 +63,3 @@ async def show_category(message: types.Message):
 # @menu_router.message(F.text.lower() == 'десерты')
 # async def show_deserts(message: types.Message):
 #     await message.answer_photo(photo=f5, caption='Десерты')
-#
