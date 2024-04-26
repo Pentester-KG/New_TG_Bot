@@ -2,6 +2,7 @@ from aiogram import Router, types, F
 from aiogram.filters import Command
 from parser.crawler import HouseCrawler
 from handlers.keyboard import start_keyboard
+import asyncio
 
 
 info_router = Router()
@@ -20,7 +21,8 @@ async def myinfo_cmd(message: types.Message):
 async def send_link(callback: types.CallbackQuery):
     await callback.answer()
     crawler = HouseCrawler()
-    crawler.get_page()
-    house_links = crawler.get_house_links()
+    # await crawler.get_page()
+    # await crawler.get_house()
+    house_links = await crawler.get_house()
     for link in house_links:
-        await callback.answer(link)
+        await callback.message.answer(link)
