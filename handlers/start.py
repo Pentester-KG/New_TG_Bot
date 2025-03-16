@@ -1,7 +1,7 @@
 from aiogram import Router, F, types
 from aiogram.filters import Command
 from handlers.keyboard import start_keyboard
-from parser.crawler import HouseCrawler
+
 
 start_router = Router()
 
@@ -17,11 +17,4 @@ async def contacts(call_back: types.CallbackQuery):
     await call_back.message.answer('+996 (551) 83 11 11')
 
 
-# @start_router.callback_query(F.data == 'send_links')
-# async def send_lk(message: types.Message):
-#     await message.answer()
-#     crawler = HouseCrawler()
-#     crawler.get_page()
-#     crawler_lins = crawler.get_house_links()
-#     for link in crawler_lins:
-#         await message.answer(link)
+

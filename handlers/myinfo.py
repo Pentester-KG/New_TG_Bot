@@ -1,8 +1,6 @@
 from aiogram import Router, types, F
 from aiogram.filters import Command
 from parser.crawler import HouseCrawler
-from handlers.keyboard import start_keyboard
-import asyncio
 
 
 info_router = Router()
